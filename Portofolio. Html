@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Portofolio | Kreatif & Profesional</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f9fafc;
+            color: #1e293b;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* navbar */
+        .navbar {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(226,232,240,0.6);
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #1e293b;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* buttons & umum */
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+            padding: 0.75rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(37,99,235,0.2);
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -12px #1e40af;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #2563eb;
+            color: #2563eb;
+            padding: 0.7rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        .btn-outline:hover {
+            background: #2563eb10;
+            border-color: #1e40af;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to right, #1e293b, #2d3a4e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-sub {
+            color: #475569;
+            max-width: 700px;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Hero */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2.5rem;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-badge {
+            background: #e0e7ff;
+            color: #1e40af;
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.03em;
+        }
+
+        .highlight {
+            color: #2563eb;
+            border-bottom: 3px solid #93c5fd;
+        }
+
+        .hero-desc {
+            font-size: 1.2rem;
+            color: #334155;
+            max-width: 550px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-avatar {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+        }
+
+        .avatar-circle {
+            background: linear-gradient(145deg, #eef2ff, #ffffff);
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            width: 280px;
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 25px 35px -12px rgba(0,0,0,0.15);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .avatar-circle i {
+            font-size: 8rem;
+            color: #2563eb;
+            filter: drop-shadow(2px 8px 12px rgba(0,0,0,0.1));
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-card {
+            background: white;
+            border-radius: 2rem;
+            padding: 1.2rem 0.8rem;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            transition: all 0.2s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .skill-card i {
+            font-size: 2.2rem;
+            color: #2563eb;
+            margin-bottom: 0.6rem;
+        }
+
+        .skill-card span {
+            font-weight: 600;
+            display: block;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #bfdbfe;
+            box-shadow: 0 20px 25px -12px rgba(0,0,0,0.08);
+        }
+
+        /* Project Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px -6px rgba(0,0,0,0.05);
+            border: 1px solid #eef2ff;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 30px -12px rgba(0,0,0,0.15);
+            border-color: #cbd5e1;
+        }
+
+        .project-img {
+            background: #eef2ff;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #2563eb;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin: 0.8rem 0;
+        }
+
+        .tag {
+            background: #eef2ff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #1e40af;
+        }
+
+        /* about & contact */
+        .about-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            background: white;
+            border-radius: 2rem;
+            padding: 2.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #334155;
+        }
+
+        .contact-info {
+            flex: 1.2;
+            background: #f8fafc;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            width: 2rem;
+            font-size: 1.4rem;
+            color: #2563eb;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            background: white;
+            width: 44px;
+            height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #1e293b;
+            font-size: 1.4rem;
+            transition: 0.2s;
+            border: 1px solid #cbd5e1;
+        }
+
+        .social-links a:hover {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            .nav-flex {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .about-wrapper {
+                flex-direction: column;
+            }
+            .avatar-circle {
+                width: 200px;
+                height: 200px;
+            }
+            .avatar-circle i {
+                font-size: 5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container nav-flex">
+        <div class="logo">✨ creative.portfolio</div>
+        <ul class="nav-links">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#skills">Keahlian</a></li>
+            <li><a href="#projects">Proyek</a></li>
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+        <a href="#contact" class="btn-primary" style="padding:0.6rem 1.5rem;">Hubungi</a>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero / Home Section -->
+    <section id="home">
+        <div class="container hero">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-code"></i> Portofolio Interaktif</div>
+                <h1>Halo, Saya <span class="highlight">Alexandra</span> <br>UI/UX & Frontend Dev</h1>
+                <p class="hero-desc">Membangun pengalaman digital yang bermakna dan estetis. Saya menggabungkan kreativitas dengan kode untuk menghasilkan karya yang fungsional dan inspiratif.</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#projects" class="btn-primary"><i class="fas fa-arrow-down"></i> Lihat Proyek</a>
+                    <a href="#contact" class="btn-outline"><i class="fas fa-paper-plane"></i> Kolaborasi</a>
+                </div>
+            </div>
+            <div class="hero-avatar">
+                <div class="avatar-circle">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" style="background: #fefefe;">
+        <div class="container">
+            <h2 class="section-title">⚡ Toolkit & Keahlian</h2>
+            <p class="section-sub">Teknologi dan alat yang saya kuasai untuk mewujudkan ide menjadi solusi nyata.</p>
+            <div class="skills-grid">
+                <div class="skill-card"><i class="fab fa-figma"></i><span>Figma</span></div>
+                <div class="skill-card"><i class="fab fa-react"></i><span>React.js</span></div>
+                <div class="skill-card"><i class="fab fa-js"></i><span>JavaScript/ES6</span></div>
+                <div class="skill-card"><i class="fab fa-html5"></i><span>HTML5/CSS3</span></div>
+                <div class="skill-card"><i class="fab fa-tailwind"></i><span>Tailwind</span></div>
+                <div class="skill-card"><i class="fab fa-python"></i><span>Python</span></div>
+                <div class="skill-card"><i class="fas fa-database"></i><span>Firebase</span></div>
+                <div class="skill-card"><i class="fab fa-git-alt"></i><span>Git/Github</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">📁 Proyek Unggulan</h2>
+            <p class="section-sub">Beberapa karya nyata yang mencerminkan dedikasi dan kualitas desain & kode.</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img"><i class="fas fa-store"></i></div>
+                    <div class="project-info">
+                        <h3>EcoMarket</h3>
+                        <p>Platform e-commerce sustainable dengan sistem loyalitas & dashboard admin interaktif.</p>
+                        <div class="project-tags"><span class="tag">React</span><span class="tag">Tailwind</span><span class="tag">Node.js</span></div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img"><i class="fas fa-chart-line"></i></div>
+                    <div class="project-info">
+                        <h3>FinDash Analytics</h3>
+                        <p>Dashboard keuangan real-time dengan grafik dinamis dan laporan otomatis.</p>
+                        <div class="project-tags"><span class="tag">Vue.js</span><span class="tag">D3.js</span><span class="tag">Express</span></div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img"><i class="fas fa-brain"></i></div>
+                    <div class="project-info">
+                        <h3>AI Content Studio</h3>
+                        <p>Aplikasi berbasis AI untuk generate copywriting & visual branding instan.</p>
+                        <div class="project-tags"><span class="tag">Next.js</span><span class="tag">OpenAI</span><span class="tag">Vercel</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Contact combined area -->
+    <section id="about">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-text">
+                    <h2 class="section-title" style="margin-bottom: 0.8rem;">🫶 Tentang Saya</h2>
+                    <p>Saya adalah desainer & pengembang frontend yang berbasis di Jakarta. Dengan pengalaman 4+ tahun di industri kreatif digital, saya percaya bahwa kombinasi antara pengalaman pengguna yang luar biasa dan kode yang bersih adalah kunci produk digital yang sukses.</p>
+                    <p>Selain coding, saya aktif berbagi insight melalui workshop dan komunitas open-source. Saya selalu haus akan inovasi, dan saat ini fokus memperdalam motion design serta aksesibilitas web.</p>
+                    <p>Motto saya: <strong>“Desain yang indah tanpa performa hanyalah hiasan, performa tanpa estetika membosankan.”</strong></p>
+                </div>
+                <div id="contact" class="contact-info">
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.6rem;"><i class="fas fa-paper-plane"></i> Hubungi Saya</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>alexandra@creative.dev</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+62 812 3456 7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Jakarta, Indonesia</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <a href="#" class="btn-primary" style="width: 100%; text-align: center; display: block;">Kirim Pesan <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Alexandra Dev — Portofolio Kreatif. Dibuat dengan <i class="fas fa-heart" style="color: #f43f5e;"></i> untuk dunia digital.</p>
+    </div>
+</footer>
+
+<!-- Smooth scrolling tambahan -->
+<script>
+    document.querySelectorAll('.nav-links a, .btn-primary[href^="#"], .btn-outline[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if(targetId && targetId !== "#" && targetId.startsWith('#')){
+                e.preventDefault();
+                const targetElement = document.querySelector(targetId);
+                if(targetElement){
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
+    // sedikit hover effect untuk project cards
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transition = 'all 0.25s cubic-bezier(0.2, 0, 0, 1)';
+        });
+    });
+</script>
+</body>
+</html>
